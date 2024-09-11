@@ -1,0 +1,27 @@
+<div class="contenedor">
+    <div class="caja">
+        <div class="cabecera">
+            <h1 class="titulo">Iniciar sesión</h1>
+        </div>
+        <div class="cuerpo">
+            <form [formGroup]="loginForm" (ngSubmit)="ingresar()">
+                <mat-form-field appearance="fill">
+                    <mat-label>Correo electrónico</mat-label>
+                    <input matInput type="email"  formControlName="correo" placeholder="Correo electrónico" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="password" placeholder="Contraseña" required>
+                </mat-form-field>
+                <div class="botones">
+                    <button mat-raised-button color="primary">
+                        Iniciar sesión
+                    </button>
+                    <button mat-stroked-button type="button" [routerLink]="['/register']">
+                        Registrarse
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

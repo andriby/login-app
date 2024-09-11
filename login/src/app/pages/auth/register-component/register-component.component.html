@@ -1,0 +1,51 @@
+<div class="contenedor">
+    <div class="caja">
+        <div class="cabecera">
+            <h1 class="titulo">Registrarse</h1>
+        </div>
+        <div class="cuerpo">
+            <form [formGroup]="registerForm" (ngSubmit)="registrar()">
+                <mat-form-field appearance="fill">
+                    <mat-label>Cedula De Identidad</mat-label>
+                    <input matInput type="number" formControlName="ci_persona" placeholder="Cedula de Identidad" required>
+                </mat-form-field>
+                <div class="fila">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput type="text" formControlName="nombre_persona" placeholder="Nombre" required>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Apellido</mat-label>
+                        <input matInput type="text" formControlName="apellido_persona" placeholder="Apellido" required>
+                    </mat-form-field>
+                </div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Fecha de Nacimiento</mat-label>
+                    <input matInput type="text" formControlName="fecha_nacimiento" placeholder="Fecha de Nacimiento" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Correo electrónico</mat-label>
+                    <input matInput type="email" formControlName="email" placeholder="Correo electrónico" required>
+                </mat-form-field>
+                <div class="fila">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput type="password" formControlName="password_usuario" placeholder="Contraseña" required>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Confirmar Contraseña</mat-label>
+                        <input matInput type="email" placeholder="Correo electrónico" required>
+                    </mat-form-field>
+                </div>
+                <div class="botones">
+                    <button mat-raised-button color="primary">
+                        Registrarse
+                    </button>
+                    <button mat-stroked-button type="button" [routerLink]="['/login']">
+                        Iniciar Sesion
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
