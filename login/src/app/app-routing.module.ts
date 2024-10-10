@@ -4,6 +4,8 @@ import { LoginPageComponent } from './pages/auth/login-page/login-page.component
 import { RegisterComponentComponent } from './pages/auth/register-component/register-component.component';
 import { BienvenidoComponent } from './pages/principal/bienvenido/bienvenido.component';
 import { CanActivateGuard } from './utils/guards/can-activate.guard';
+import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.component';
+import { GenerarSolicitudComponent } from './pages/generar-solicitud/generar-solicitud.component';
 
 const routes: Routes = [
   {
@@ -15,8 +17,18 @@ const routes: Routes = [
     component: RegisterComponentComponent
   },
   {
-    path: "bienvenido",
-    component: BienvenidoComponent,
+    path: "principal",
+    component: LayoutAdminComponent,
+    canActivate: [CanActivateGuard]
+  },
+  {
+    path: "solicitud",
+    children: [
+      {
+        path: "generar-solicitud",
+        component: GenerarSolicitudComponent
+      }
+    ],
     canActivate: [CanActivateGuard]
   },
   {

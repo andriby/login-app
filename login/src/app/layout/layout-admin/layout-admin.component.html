@@ -1,0 +1,13 @@
+<p>
+    <mat-toolbar class="toolbar">
+        <span [routerLink]="['/principal']">SATIN</span>
+        <span class="example-spacer"></span>
+        <button mat-raised-button [routerLink]="['/solicitud/generar-solicitud']" class="example-icon center-content" aria-label="Example icon-button with share icon" title="Crear Solicitud" color="primary">
+            <span>Crear Solicitud</span>
+            <mat-icon>add</mat-icon>
+        </button>
+        <button mat-icon-button (click)="cerrarSesion()" style="margin-left: 2rem;" title="Cerrar Sesion">
+            <mat-icon>exit_to_app</mat-icon>
+        </button>
+    </mat-toolbar>
+</p>

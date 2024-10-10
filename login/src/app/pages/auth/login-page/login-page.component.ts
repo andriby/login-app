@@ -19,6 +19,10 @@ export class LoginPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let token = sessionStorage.getItem('token')
+    if (token != null) {
+      this.router.navigate(['/principal'])
+    } 
   }
 
   ingresar(): void {
@@ -27,7 +31,7 @@ export class LoginPageComponent implements OnInit {
         (response) => {
           console.log('Inicio de sesión exitoso:', response);
           sessionStorage.setItem('token', response.token);
-          this.router.navigate(['/bienvenido']);
+          this.router.navigate(['/principal']);
         },
         (error) => {
           console.error('Error de inicio de sesión', error);

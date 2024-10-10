@@ -1,0 +1,21 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.toolbar{
+    padding: 0 2rem;
+}
+
+.center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+.center-content mat-icon {
+    margin-left: 8px; /* Espacio entre el texto y el icono */
+}
+
+span{
+    cursor: pointer;
+}

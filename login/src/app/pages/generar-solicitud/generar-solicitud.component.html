@@ -1,0 +1,54 @@
+<app-layout-admin></app-layout-admin>
+
+<div class="d-flex justify-content-center w-full mt-5">
+    <div class="caja">
+        <div class="cabecera">
+            <h2 class="titulo">Generar Solicitud</h2>
+        </div>
+        <div class="cuerpo">
+            <form [formGroup]="solicitudForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>Tipo de Solicitud</mat-label>
+                    <mat-select formControlName="tipoS">
+                        <mat-option value="0">-- Selecione una Opcion --</mat-option>
+                        <mat-option value="1">Militar</mat-option>
+                        <mat-option value="2">Familiar</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Area de la Solicitud</mat-label>
+                    <mat-select formControlName="areaS">
+                        <mat-option value="0">-- Selecione una Opcion --</mat-option>
+                        <mat-option value="1">Salud</mat-option>
+                        <mat-option value="2">Consultoria Juridica</mat-option>
+                        <mat-option value="3">Educacion</mat-option>
+                        <mat-option value="4">Ayudas</mat-option>
+                        <mat-option value="5">Credito</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Descripcion</mat-label>
+                    <mat-select formControlName="descripcionS">
+                        <mat-option *ngFor="let i of descripcionArr; let idx = index" [value]="idx">{{i}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" [class.d-none]="mostrarConsulta">
+                    <mat-label>Tipo de Consulta</mat-label>
+                    <mat-select formControlName="tipoConsulta">
+                        <mat-option value="0">-- Seleccione una Opcion --</mat-option>
+                        <mat-option value="1">Consulta General</mat-option>
+                        <mat-option value="2">Consulta Especializada</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div class="botones d-flex justify-content-between">
+                    <button mat-raised-button color="primary" class="w-50 mx-1">Generar Solicitud</button>
+                    <button mat-raised-button color="warn" class="w-50 mx-1" [routerLink]="['/principal']">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/utils/services/login.service';
 import IDatos from 'src/app/utils/interface/IDatos.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-component',
@@ -11,7 +12,7 @@ import IDatos from 'src/app/utils/interface/IDatos.interface';
 export class RegisterComponentComponent implements OnInit {
   registerForm: FormGroup;
 
-  constructor(private _fb: FormBuilder, private _loginService: LoginService) {
+  constructor(private _fb: FormBuilder, private _loginService: LoginService, private router: Router) {
     this.registerForm = this._fb.group({
       ci_persona: ['', Validators.required],
       nombre_persona: ['', Validators.required],
@@ -23,6 +24,10 @@ export class RegisterComponentComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let token = sessionStorage.getItem('token')
+    if (token != null) {
+      this.router.navigate(['/principal'])
+    } 
   }
 
   registrar(): void {
